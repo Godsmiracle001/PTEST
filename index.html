@@ -1,289 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Jetuxe Healthcare</title>
-		<script src="https://cdn.tailwindcss.com"></script>
-		<script
-			src="https://kit.fontawesome.com/a076d05399.js"
-			crossorigin="anonymous"
-		></script>
-		<style>
-			/* Additional Styles */
-			.dark-mode {
-				background-color: #1a202c;
-				color: #f7fafc;
-			}
-			.slider-container {
-				display: flex;
-				overflow-x: auto;
-				scroll-behavior: smooth;
-			}
-			.slider-item {
-				flex: 0 0 auto;
-				margin-right: 1rem;
-			}
-			.slider-container::-webkit-scrollbar {
-				display: none;
-			}
-			.hidden-menu {
-				display: none;
-			}
-			@media (max-width: 768px) {
-				.hidden-menu {
-					display: block;
-				}
-				nav.md\:flex {
-					display: none;
-				}
-			}
-		</style>
-	</head>
-	<body class="bg-white text-gray-800">
-		<!-- Navbar -->
-		<header class="bg-blue-500 text-white shadow-md sticky top-0 z-50">
-			<div
-				class="container mx-auto flex justify-between items-center py-4 px-6"
-			>
-				<h1 class="text-xl font-bold">Jetuxe Healthcare</h1>
-				<div id="navbar-menu" class="hidden md:flex space-x-4">
-					<a href="#" class="hover:text-red-500">Home</a>
-					<a href="#services" class="hover:text-red-500">Services</a>
-					<a href="#about" class="hover:text-red-500">About Us</a>
-					<a href="#products" class="hover:text-red-500">Products</a>
-					<a href="#contact" class="hover:text-red-500">Contact</a>
-				</div>
-				<button
-					id="darkModeToggle"
-					class="ml-4 p-2 bg-gray-200 text-gray-800 rounded-full shadow"
-				>
-					<i class="fas fa-moon"></i>
-				</button>
-				<button
-					id="menuToggle"
-					class="md:hidden p-2 focus:outline-none"
-				>
-					<i class="fas fa-bars"></i>
-				</button>
-			</div>
-			<div id="mobile-menu" class="hidden md:hidden mt-4 space-y-2">
-				<a href="#" class="block py-2 hover:text-red-500">Home</a>
-				<a href="#services" class="block py-2 hover:text-red-500"
-					>Services</a
-				>
-				<a href="#about" class="block py-2 hover:text-red-500"
-					>About Us</a
-				>
-				<a href="#products" class="block py-2 hover:text-red-500"
-					>Products</a
-				>
-				<a href="#contact" class="block py-2 hover:text-red-500"
-					>Contact</a
-				>
-			</div>
-		</header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pebec Complaint Form</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      body {
+        background-color: #004d00;
+        color: white;
+      }
+      input,
+      select,
+      textarea {
+        background-color: white;
+        color: black;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+      th,
+      td {
+        border: 1px solid white;
+        padding: 8px;
+        text-align: left;
+      }
+    </style>
+  </head>
+  <body class="p-6">
+    <!-- Logo Section -->
+    <div class="flex items-center mb-6">
+      <img src="logo.jpg" alt="PEBEC Logo" class="h-12 mr-4" />
+      <h1 class="text-3xl font-bold">PEBEC Complaint Form</h1>
+    </div>
 
-		<!-- Hero Section -->
-		<section class="bg-gray-100 text-center py-20">
-			<div class="container mx-auto">
-				<h2 class="text-4xl font-bold text-blue-600 mb-4">
-					Your Health, Our Priority
-				</h2>
-				<p class="text-lg text-gray-600 mb-8">
-					Committed to providing the best healthcare services with
-					compassion and professionalism.
-				</p>
-				<a
-					href="#services"
-					class="bg-red-500 text-white px-6 py-3 rounded shadow hover:bg-red-600"
-					>Explore Services</a
-				>
-			</div>
-		</section>
+    <form
+      id="complaintForm"
+      class="bg-white p-6 rounded-lg shadow-lg text-black max-w-3xl mx-auto"
+    >
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div>
+          <label class="block font-semibold">Customer Name:</label>
+          <input
+            type="text"
+            id="customerName"
+            class="w-full p-2 border rounded"
+            required
+          />
+        </div>
+        <div>
+          <label class="block font-semibold">Address:</label>
+          <input
+            type="text"
+            id="address"
+            class="w-full p-2 border rounded"
+            required
+          />
+        </div>
+        <div>
+          <label class="block font-semibold">Email Address:</label>
+          <input
+            type="email"
+            id="email"
+            class="w-full p-2 border rounded"
+            required
+          />
+        </div>
+        <div>
+          <label class="block font-semibold">Phone Number:</label>
+          <input
+            type="text"
+            id="phone"
+            class="w-full p-2 border rounded"
+            required
+          />
+        </div>
+        <div>
+          <label class="block font-semibold">Service Provided:</label>
+          <input
+            type="text"
+            id="service"
+            class="w-full p-2 border rounded"
+            required
+          />
+        </div>
+        <div>
+          <label class="block font-semibold">Date of Submission:</label>
+          <input
+            type="date"
+            id="submissionDate"
+            class="w-full p-2 border rounded"
+            required
+          />
+        </div>
+        <div>
+          <label class="block font-semibold">Date of Completion:</label>
+          <input
+            type="date"
+            id="completionDate"
+            class="w-full p-2 border rounded"
+          />
+        </div>
+      </div>
 
-		<!-- Services Section -->
-		<section id="services" class="py-20 bg-white">
-			<div class="container mx-auto text-center">
-				<h3 class="text-3xl font-bold text-blue-600 mb-8">
-					Our Services
-				</h3>
-				<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-					<div
-						class="p-6 shadow-lg rounded-lg border border-gray-200"
-					>
-						<i
-							class="fas fa-user-md text-red-500 text-3xl mb-4"
-						></i>
-						<h4 class="text-xl font-semibold mb-2">
-							General Consultation
-						</h4>
-						<p class="text-gray-600">
-							Expert advice and diagnosis for all your healthcare
-							needs.
-						</p>
-					</div>
-					<div
-						class="p-6 shadow-lg rounded-lg border border-gray-200"
-					>
-						<i
-							class="fas fa-procedures text-blue-500 text-3xl mb-4"
-						></i>
-						<h4 class="text-xl font-semibold mb-2">
-							In-Patient Care
-						</h4>
-						<p class="text-gray-600">
-							Comprehensive in-patient care with modern
-							facilities.
-						</p>
-					</div>
-					<div
-						class="p-6 shadow-lg rounded-lg border border-gray-200"
-					>
-						<i
-							class="fas fa-heartbeat text-red-500 text-3xl mb-4"
-						></i>
-						<h4 class="text-xl font-semibold mb-2">
-							Emergency Services
-						</h4>
-						<p class="text-gray-600">
-							24/7 emergency response to ensure your safety.
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
+      <div class="mt-4">
+        <label class="block font-semibold">Issue/Complaint:</label>
+        <textarea
+          id="issue"
+          class="w-full p-2 border rounded"
+          required
+        ></textarea>
+      </div>
 
-		<!-- Products Section -->
-		<section id="products" class="py-20 bg-gray-100">
-			<div class="container mx-auto text-center">
-				<h3 class="text-3xl font-bold text-blue-600 mb-8">
-					Our Products
-				</h3>
-				<div class="slider-container">
-					<div class="slider-item">
-						<img
-							src="https://via.placeholder.com/300"
-							alt="Product 1"
-							class="rounded shadow-lg"
-						/>
-						<h4 class="text-lg font-semibold mt-2">Product 1</h4>
-					</div>
-					<div class="slider-item">
-						<img
-							src="https://via.placeholder.com/300"
-							alt="Product 2"
-							class="rounded shadow-lg"
-						/>
-						<h4 class="text-lg font-semibold mt-2">Product 2</h4>
-					</div>
-					<div class="slider-item">
-						<img
-							src="https://via.placeholder.com/300"
-							alt="Product 3"
-							class="rounded shadow-lg"
-						/>
-						<h4 class="text-lg font-semibold mt-2">Product 3</h4>
-					</div>
-					<div class="slider-item">
-						<img
-							src="https://via.placeholder.com/300"
-							alt="Product 4"
-							class="rounded shadow-lg"
-						/>
-						<h4 class="text-lg font-semibold mt-2">Product 4</h4>
-					</div>
-				</div>
-			</div>
-		</section>
+      <button
+        type="submit"
+        class="bg-green-700 text-white px-6 py-2 mt-4 rounded hover:bg-green-800 transition"
+      >
+        Submit
+      </button>
+    </form>
 
-		<!-- About Us Section -->
-		<section id="about" class="py-20 bg-white">
-			<div
-				class="container mx-auto flex flex-col md:flex-row items-center"
-			>
-				<div class="md:w-1/2">
-					<h3 class="text-3xl font-bold text-blue-600 mb-4">
-						About Us
-					</h3>
-					<p class="text-gray-600 mb-4">
-						Jetuxe Healthcare is dedicated to improving lives
-						through advanced medical care and personalized
-						attention. Our team of professionals is here to support
-						you every step of the way.
-					</p>
-					<a
-						href="#contact"
-						class="bg-blue-500 text-white px-6 py-3 rounded shadow hover:bg-blue-600"
-						>Contact Us</a
-					>
-				</div>
-				<div class="md:w-1/2 mt-8 md:mt-0">
-					<img
-						src="https://via.placeholder.com/500x300"
-						alt="About Us"
-						class="rounded shadow-lg"
-					/>
-				</div>
-			</div>
-		</section>
+    <h2 class="text-xl font-bold mt-8">Submitted Complaints</h2>
+    <div class="overflow-x-auto">
+      <table class="mt-4 bg-white text-black rounded-lg shadow-lg">
+        <thead class="bg-green-700 text-white">
+          <tr>
+            <th>Customer Name</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Service</th>
+            <th>Submission Date</th>
+            <th>Completion Date</th>
+            <th>Issue</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="complaintsTable"></tbody>
+      </table>
+    </div>
 
-		<!-- Contact Section -->
-		<section id="contact" class="py-20 bg-gray-100">
-			<div class="container mx-auto text-center">
-				<h3 class="text-3xl font-bold text-blue-600 mb-8">
-					Get in Touch
-				</h3>
-				<form class="max-w-lg mx-auto">
-					<div class="mb-4">
-						<input
-							type="text"
-							placeholder="Your Name"
-							class="w-full px-4 py-2 border rounded"
-						/>
-					</div>
-					<div class="mb-4">
-						<input
-							type="email"
-							placeholder="Your Email"
-							class="w-full px-4 py-2 border rounded"
-						/>
-					</div>
-					<div class="mb-4">
-						<textarea
-							placeholder="Your Message"
-							class="w-full px-4 py-2 border rounded"
-						></textarea>
-					</div>
-					<button
-						type="submit"
-						class="bg-red-500 text-white px-6 py-3 rounded shadow hover:bg-red-600"
-					>
-						Send Message
-					</button>
-				</form>
-			</div>
-		</section>
+    <script>
+      document
+        .getElementById("complaintForm")
+        .addEventListener("submit", function (event) {
+          event.preventDefault();
+          const complaint = {
+            customerName: document.getElementById("customerName").value,
+            address: document.getElementById("address").value,
+            email: document.getElementById("email").value,
+            phone: document.getElementById("phone").value,
+            service: document.getElementById("service").value,
+            submissionDate: document.getElementById("submissionDate").value,
+            completionDate: document.getElementById("completionDate").value,
+            issue: document.getElementById("issue").value,
+            status: "Pending",
+          };
+          let complaints = JSON.parse(localStorage.getItem("complaints")) || [];
+          complaints.push(complaint);
+          localStorage.setItem("complaints", JSON.stringify(complaints));
+          loadComplaints();
+          this.reset();
+        });
 
-		<!-- Footer -->
-		<footer class="bg-blue-500 text-white py-4">
-			<div class="container mx-auto text-center">
-				<p>&copy; 2025 Jetuxe Healthcare. All rights reserved.</p>
-			</div>
-		</footer>
+      function loadComplaints() {
+        let complaints = JSON.parse(localStorage.getItem("complaints")) || [];
+        const tableBody = document.getElementById("complaintsTable");
+        tableBody.innerHTML = "";
+        complaints.forEach((complaint) => {
+          let row = `<tr>
+                      <td>${complaint.customerName}</td>
+                      <td>${complaint.address}</td>
+                      <td>${complaint.email}</td>
+                      <td>${complaint.phone}</td>
+                      <td>${complaint.service}</td>
+                      <td>${complaint.submissionDate}</td>
+                      <td>${complaint.completionDate}</td>
+                      <td>${complaint.issue}</td>
+                      <td>${complaint.status}</td>
+                  </tr>`;
+          tableBody.innerHTML += row;
+        });
+      }
 
-		<!-- Scripts -->
-		<script>
-			const toggle = document.getElementById("darkModeToggle");
-			toggle.addEventListener("click", () => {
-				document.body.classList.toggle("dark-mode");
-			});
-
-			const menuToggle = document.getElementById("menuToggle");
-			const mobileMenu = document.getElementById("mobileMenu");
-			menuToggle.addEventListener("click", () => {
-				mobileMenu.classList.toggle("hidden-menu");
-			});
-		</script>
-	</body>
+      document.addEventListener("DOMContentLoaded", loadComplaints);
+    </script>
+  </body>
 </html>
